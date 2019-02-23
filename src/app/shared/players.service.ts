@@ -80,14 +80,14 @@ export class PlayersService {
       player.likeUp += likeUp;
 
       if(player.likeDown == 0 ){
-        player.likeDown
+        player.likeDown;
       }else{
         player.likeDown += likeDown;
       }
       
     }
-    console.log(`Likes Up is :  ${player.likeUp}`);
-    console.log(`Likes Down is :  ${player.likeDown}`);
+    //console.log(`Likes Up is :  ${player.likeUp}`);
+    //console.log(`Likes Down is :  ${player.likeDown}`);
   }
 
 

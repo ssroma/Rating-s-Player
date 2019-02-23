@@ -2,32 +2,57 @@
   <div class="row">
     <h4>Comments .</h4>
     <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">By : Nome do criado </div>
-        <div class="card-body">
-          <div class="card-text">Comments</div>
+      <div *ngIf=" comments.length > 0; else noComment " >
+        <div class="card" *ngFor="let comment of comments">
+          <div class="card-header"><span>By:</span> {{ comment.name }} </div>
+          <div class="card-body">
+            <div class="card-text">{{ comment.comment }}</div>
+          </div>
         </div>
-      </div>
+
+        <ng-template #noComment >
+          <p>No comment yet!</p>
+        </ng-template>
+      <div>
+
     </div>
   </div>
-  <div class="row">
+
+ 
+
+</div>
+ <!-- Form Comment-->
+<div class="row rowForm" >
     <h4>Let here your Comment . </h4>
     <div class="col-md-12">
-      <form >
+      <form #myForm="ngForm" >
+        
+        <input type="text" class="form-control" name="idInput"
+          #idInput [(ngModel)]="idFromPlayers"
+          id="notVisible"
+        >
+
         <div class="form-group">
           <label for="nameInput">Name : </label>
-          <input type="text" class="form-control">
+          <input required name="nameInput" ngModel type="text" class="form-control" #nameInput="ngModel">
+          <div *ngIf=" nameInput.touched && !nameInput.valid "  class="alert alert-danger" >
+            <div *ngIf=" nameInput.errors.required" >Name is required</div>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="textInput">Comments : </label>
-          <textarea class="form-control" row="4"></textarea>
+          <textarea required maxlength="50" name="textInput" ngModel class="form-control" row="4" #textInput="ngModel"
+          ></textarea>
+          <div *ngIf="textInput.touched && textInput.invalid" class="alert alert-danger" >
+            <div *ngIf="textInput.errors.required" >Some comment is required.</div>
+            <div *ngIf="textInput.errors?.maxlength" >Max of character is 40</div>
+          </div>
         </div>
 
         <div class="row">
-          <button class="btn btn-success">Comment</button>
+          <button [disabled]="!myForm.valid" (click)="submitComment(idInput.value, nameInput.value, textInput.value)" class="btn btn-success">Comment</button>
         </div>
       </form>
     </div>
   </div>
-</div>

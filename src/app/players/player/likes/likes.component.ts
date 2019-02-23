@@ -40,8 +40,8 @@ export class LikesComponent implements OnInit {
 
   likesDown(evt: Event){
     evt.preventDefault();
-    if(this.likeUP == 0){
-      this.likeUP = 0;
+    if(this.likeUP == 0 && this.likeDown != 0 ){
+      this.likeUP = 1;
     }else{
       this.likeUP = -1;
     }
