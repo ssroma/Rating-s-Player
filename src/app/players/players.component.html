@@ -1,0 +1,28 @@
+<!-- <div class="container">
+  <div class="row" >
+    <div class="col" >
+
+      <div class="card" >
+        <img [src]="player.photo" class="card-img-top" alt="player.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ player.name }}</h5>
+          <p class="card-text">{{ player.possition }}</p>
+          <p class="card-text">{{ player.country }}</p>
+          <a href="#" class="btn btn-primary">Rate the Player</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+<div class="divCartao">
+  <div class="cartao" *ngFor="let player of players">
+    <img [src]="player.photo"  alt="player.name">
+    <div class="cartao-body">
+        <h5 class="cartao-title">{{ player.name }}</h5>
+        <p class="cartao-text">{{ player.possition }}</p>
+        <p class="cartao-text">{{ player.country }}</p>
+        <a [routerLink]="['/players', player.id ]" class="btn btn-primary">Rate the Player</a>
+    </div>
+  </div>
+</div>

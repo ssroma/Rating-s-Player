@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <img [src]="players.photo" class="card-img-top" alt="{{ players.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ players.name }}</h5>
+          <p class="card-text">{{ players.position }}</p>
+          <p class="card-text">{{ players.country }}</p>
+        </div>
+      </div>
+      <app-likes [idTolikes]="players.id" ></app-likes>
+    </div>
+
+    <div class="col-sm-6">
+      <app-comments></app-comments>
+    </div>
+  </div>
+</div>
