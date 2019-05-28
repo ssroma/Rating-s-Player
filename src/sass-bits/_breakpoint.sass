@@ -2,5 +2,11 @@
 //   BREAKPOINTS
 //*********************
 
-@mixin mq($point)
-    @media (max-width: $point) { @content }
+@mixin mq($point, $fr)
+    @media (min-width: $point)
+        display: grid
+        grid-template-columns: repeat($fr, 1fr)
+        grid-gap: .5rem .5rem
+        
+   
+

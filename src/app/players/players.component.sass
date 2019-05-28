@@ -1,37 +1,42 @@
 @import '../../sass-bits/breakpoint'
-.divCartao
-    position: relative
-    width: 100%
+#wrapper
+    width: 90%
+    max-width: 90%
     margin: 1rem auto
-    padding: 0
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
+
+    +mq(640px, 2)
+    +mq(1007px, 4)
 
     .cartao
-        width: 30%
-        margin: .3rem .2rem
-        padding: 0
-        border: 1px solid rgba(darkslategray, 1)
-
-        +mq('400px')
-            width: 1000%
+        width: 100%
+        padding: .3rem
+        border: 1px solid rgba( darkgray, .9 )
 
         img 
             width: 100%
             height: auto
         
+        div
+            width: 100%
+
+            a 
+                width: 100%
+
         .cartao-body
             width: 100%
-            padding: .4rem
-            line-height: .5rem
+            display: flex
+            flex-direction: column
+            line-height: .1rem
+            padding: .3rem 0 .2rem 0 
 
             .cartao-title
-                font-size: 1.8em
-                color: rgba(darkslategray, 1)
-
+                font-size: 1.3rem
+                color: rgba( darkgray, 1 )
             .cartao-text
-                color: rgba(darkslategray, .8)
+                color: rgba( darkgray, .8 )
+           
+              
 
 
-            
+
+                

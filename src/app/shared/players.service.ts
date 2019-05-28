@@ -20,7 +20,7 @@ export class PlayersService {
       name: "Ronaldo", 
       position: "Atacante", 
       country: "Brasil", 
-      photo: "https://www.sgagora.com.br/sg/wp-content/uploads/2015/01/ronaldo9-e1421404840502.jpg",
+      photo: "https://ih0.redbubble.net/image.533206903.6107/flat,550x550,075,f.jpg",
       likeUp: 43,
       likeDown: 2
     },
@@ -38,7 +38,7 @@ export class PlayersService {
       name: "Gianluigi Buffon", 
       position: "Goleiro", 
       country: "Italia", 
-      photo: "http://www.politicaleconomistng.com/wp-content/files/2018/05/Buffon-660x400.jpg",
+      photo: "https://static.fctables.com/upload/4s/4sjia57eb7457805e0/gianluigi-buffon.jpg",
       likeUp: 32,
       likeDown: 12
     },
